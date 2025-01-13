@@ -2,7 +2,7 @@
 This file contains all the agent code for the Epstein Civil Uprising Model.
 """
 
-from enum import Emun
+from enum import Enum
 import math
 import mesa
 
