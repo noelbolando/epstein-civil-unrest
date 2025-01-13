@@ -24,7 +24,7 @@ class EpsteinAgent(mesa.experimental.cell_space.CellAgent):
         """
         Looking around to see who my neighbors are
         """
-        self.neighborhood = self.get_neighborhood(radius=self.vision)
+        self.neighborhood = self.cell.get_neighborhood(radius=self.vision)
         self.neighbors = self.neighborhood.agents
         self.empty_neighbors = [
             c for c in self.neighborhood if c.is_empty

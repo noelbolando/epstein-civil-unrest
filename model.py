@@ -39,7 +39,7 @@ class EpsteinCivilViolence(Model):
             cop_density=0.074,
             citizen_vision=7,
             cop_vision=7,
-            legiitmacy=0.8,
+            legitimacy=0.8,
             max_jail_term=1000,
             active_threshold=0.1,
             arrest_prob_constant=2.3,
@@ -97,7 +97,7 @@ class EpsteinCivilViolence(Model):
             elif klass == Citizen:
                 citizen = Citizen(
                     self,
-                    regime_legitimacy=legiitmacy,
+                    regime_legitimacy=legitimacy,
                     threshold=active_threshold,
                     vision=citizen_vision,
                     arrest_prob_constant=arrest_prob_constant)
@@ -119,7 +119,7 @@ class EpsteinCivilViolence(Model):
             self.running = False
     
     """Helper function for counting number of citizens in a given state"""
-    def update_counts(self):
+    def _update_counts(self):
         counts = self.agents_by_type[Citizen].groupby("state").count()
         for state in CitizenState:
             setattr(self, state.name, counts.get(state, 0))
