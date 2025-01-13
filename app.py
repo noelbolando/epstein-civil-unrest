@@ -1,5 +1,7 @@
 """
 This file contains all the app code for the Epstein Civil Uprising Model.
+To initialize the app:
+    solara run app.py
 """
 
 from mesa.visualization import Slider, SolaraViz, make_plot_component, make_space_component
