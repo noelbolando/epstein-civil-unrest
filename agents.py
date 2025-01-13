@@ -44,7 +44,7 @@ class Citizen(EpsteinAgent):
     Rule: if grievance - risk > threshold value, then the agent will rebel
     
     Attributes:
-        hardship: agetn's perceived hardship (i.e. physical or economic privation), this attribute is exogenous and drawn from U(0,1)
+        hardship: agent's perceived hardship (i.e. physical or economic privation), this attribute is exogenous and drawn from U(0,1)
         regime_legitimacy: agent's perception of regime legitimacy, equal across all agents, this attribute is exogenous
         risk_aversion: exogenous, drawn from U(0,1)
         threshold: if (grievance - (risk_aversion * arrest_probability)) > threshold, agent will go/remain ACTIVE
@@ -64,6 +64,7 @@ class Citizen(EpsteinAgent):
     ):
       """
       Creates a new Citizen agent
+      
       Args:
         model: the model to which the agent belongs
         hardship: agent's perceived hardship (i.e. physical or economic privation)
@@ -158,6 +159,7 @@ class Cop(EpsteinAgent):
             max_jail_term
     ):
         """Creates a new Cop
+        
         Args:
             x, y: grid coordinates
             vision: number of cells in each direction

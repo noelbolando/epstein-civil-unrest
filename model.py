@@ -122,5 +122,5 @@ class EpsteinCivilViolence(Model):
     def update_counts(self):
         counts = self.agents_by_type[Citizen].groupby("state").count()
         for state in CitizenState:
-            setattr(self, state.name, counts.get(state,0))
+            setattr(self, state.name, counts.get(state, 0))
 
